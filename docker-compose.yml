@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  pylot:
+    container_name: pylot_runner
+    image: pylot
+    build:
+      context: .
+    command: python3 ppo_continuous_action.py --track 1 --wandb-entity ${WANDB_ENTITY} --total-timesteps ${TOTAL_TIMESTEPS}
+    environment:
+      WANDB_API_KEY: ${WANDB_API_KEY}
+      WANDB_ENTITY: ${WANDB_ENTITY}
+      TOTAL_TIMESTEPS: ${TOTAL_TIMESTEPS}

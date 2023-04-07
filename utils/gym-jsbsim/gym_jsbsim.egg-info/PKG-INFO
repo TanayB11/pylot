@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: gym-jsbsim
+Version: 0.1
+Summary: A package of reinforcement learning environments for flight control using the JSBSim flight dynamics model.
+Home-page: https://github.com/Gor-Ren/gym-jsbsim
+Author: Gor-Ren
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.6
+License-File: LICENSE

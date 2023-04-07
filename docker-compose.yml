@@ -11,3 +11,5 @@ services:
       WANDB_API_KEY: ${WANDB_API_KEY}
       WANDB_ENTITY: ${WANDB_ENTITY}
       TOTAL_TIMESTEPS: ${TOTAL_TIMESTEPS}
+    volumes:
+      - ./runs:/pylot/src/runs

@@ -332,9 +332,9 @@ if __name__ == "__main__":
                 if filename not in video_filenames and filename.endswith(".mp4"):
                     wandb.log({f"videos": wandb.Video(f"videos/{run_name}/{filename}")})
                     video_filenames.add(filename)
-
+        elif args.track:
             model_path = f"runs/{run_name}/{args.exp_name}.cleanrl_model"
-            torch.save(q_network.state_dict(), model_path)
+            torch.save(agent.state_dict(), model_path)
             print(f"model saved to {model_path}")
 
             # # TODO: update episode returns

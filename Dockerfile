@@ -8,7 +8,7 @@ RUN apt-get install -y python3 python3-pip
 RUN apt-get install -y cmake
 
 RUN pip3 install torch --index-url https://download.pytorch.org/whl/cpu
-RUN pip3 install numpy gym==0.21.0 tensorboard jsbsim cython wandb
+RUN pip3 install numpy gym==0.21.0 tensorboard jsbsim cython wandb matplotlib==3.6.3
 
 COPY . .
 

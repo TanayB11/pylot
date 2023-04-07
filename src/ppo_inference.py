@@ -35,7 +35,10 @@ def parse_args():
         help="path to the .cleanrl_model file from training")
 
     # Algorithm specific arguments
-    parser.add_argument("--env-id", type=str, default="JSBSim-TurnHeadingControlTask-Cessna172P-Shaping.STANDARD-NoFG-v0",
+    # parser.add_argument("--env-id", type=str, default="JSBSim-TurnHeadingControlTask-Cessna172P-Shaping.STANDARD-NoFG-v0",
+    #     help="the id of the environment")
+
+    parser.add_argument("--env-id", type=str, default="JSBSim-TurnHeadingControlTask-Cessna172P-Shaping.STANDARD-FG-v0",
         help="the id of the environment")
 
     parser.add_argument("--num-steps", type=int, default=2048,
@@ -55,8 +58,6 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     run_name = f"INFERENCE_{args.env_id}__{args.exp_name}__{args.seed}__{int(time.time())}"
-
-    print(args)
 
     # TRY NOT TO MODIFY: seeding
     random.seed(args.seed)
@@ -113,9 +114,10 @@ if __name__ == '__main__':
         next_obs, next_done = torch.Tensor(next_obs).to(device), torch.Tensor(done).to(device)
 
         # print(reward, done, infos)
+        envs.envs[0].render(mode='flightgear')
+        # envs.render()
 
         if done:
             print(f"global_step={global_step}, episodic_return={infos[0]['episode']['r']}")
             break
-
 

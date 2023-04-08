@@ -333,7 +333,7 @@ if __name__ == "__main__":
                     wandb.log({f"videos": wandb.Video(f"videos/{run_name}/{filename}")})
                     video_filenames.add(filename)
         elif args.track:
-            model_path = f"runs/{run_name}/{args.exp_name}.cleanrl_model"
+            model_path = f"runs/{run_name}/{args.exp_name}/{time.strftime('%X %x %Z')}.cleanrl_model"
             torch.save(agent.state_dict(), model_path)
             print(f"model saved to {model_path}")
 

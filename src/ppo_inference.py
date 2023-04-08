@@ -96,7 +96,10 @@ if __name__ == '__main__':
     video_filenames = set()
 
     # run inference loop
-    for step in range(0, args.num_steps):
+    done = False
+    step = 0
+    # for step in range(0, args.num_steps):
+    while not done:
         global_step += 1 * args.num_envs
         obs[step] = next_obs
         dones[step] = next_done
@@ -120,4 +123,6 @@ if __name__ == '__main__':
         if done:
             print(f"global_step={global_step}, episodic_return={infos[0]['episode']['r']}")
             break
+
+        step += 1
 

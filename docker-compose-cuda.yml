@@ -6,6 +6,7 @@ services:
     image: pylot
     build:
       context: .
+      dockerfile: Dockerfile_CUDA
     command: python3 ppo_continuous_action.py --track 1 --wandb-entity ${WANDB_ENTITY} --total-timesteps ${TOTAL_TIMESTEPS}
     environment:
       WANDB_API_KEY: ${WANDB_API_KEY}

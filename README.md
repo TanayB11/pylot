@@ -3,7 +3,7 @@
 **Tanay Biradar, Conner Khudaverdyan, Casey Linden, Edison Zhang**
 
 <p align="center">
-    <img src="./demos/pylot-video-demo.gif" alt="Pylot Demo" width="30%"/>
+    <img src="./demos/pylot-video-demo.gif" alt="Pylot Demo" width="50%"/>
 </p>
 
 
